@@ -36,7 +36,7 @@ fun SplashScreen(
 
 @Composable
 private fun LoadingSplash() {
-    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.lottimovie))
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.lottie_splash))
     Column(
         modifier = Modifier
             .wrapContentWidth()

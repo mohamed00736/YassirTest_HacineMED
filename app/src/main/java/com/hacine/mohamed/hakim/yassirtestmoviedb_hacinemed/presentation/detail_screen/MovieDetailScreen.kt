@@ -47,11 +47,12 @@ import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.RatingBar
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.R
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.Movie
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.network.Constants
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.presentation.detail_screen.DetailViewModel
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.ThreeDotLoading
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MovieDetailScreen(movieid: String , viewModel: MainViewModel = hiltViewModel(), onBack:()->Unit ) {
+fun MovieDetailScreen(movieid: String, viewModel: DetailViewModel = hiltViewModel(), onBack:()->Unit ) {
 
 
     LaunchedEffect(key1 = true){
@@ -82,18 +83,21 @@ fun MovieDetailScreen(movieid: String , viewModel: MainViewModel = hiltViewModel
                 LoadingView()
             }
             is UiState.Success ->{
-                ( (uiState.value as UiState.Success).data as Movie).let { movie->
+                ( (uiState.value as UiState.Success).data as Movie).let { movie ->
 
                     MovieDetails(movie = movie)
+
                 }
-
-
             }
             is UiState.Fail -> {
                 (uiState.value as UiState.Fail).message?.let {
-                    FailedView(onRetry = {
-                        viewModel.getTrendingMovies()
-                    }, retryable = true, errorText = it)
+                    FailedView(
+                        onRetry = {
+                            viewModel.getMovieById(movieid)
+                        },
+                        retryable = true,
+                        errorText = it
+                    )
                 }
             }
 

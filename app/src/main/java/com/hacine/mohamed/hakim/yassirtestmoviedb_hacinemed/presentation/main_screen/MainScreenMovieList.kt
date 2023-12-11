@@ -1,4 +1,4 @@
-package com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.presentation
+package com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.presentation.main_screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.grid.items
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.hacine.mohamed.hakim.myapplication.presentation.UiState
-import com.hacine.mohamed.hakim.yassir_test_moviedb.presentation.MainViewModel
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.FailedView
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.MovieListItem
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.MovieList
@@ -28,7 +27,8 @@ import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.Loadin
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
-    viewModel: MainViewModel = hiltViewModel(), onMovieSelected: (movieid: String) -> Unit
+    viewModel: MainViewModel = hiltViewModel(),
+    onMovieSelected: (movieid: String) -> Unit
 ) {
 
     val uiState = viewModel.movieListuiState.collectAsState()
@@ -39,7 +39,6 @@ fun MainScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Top App Bar
         TopAppBar(
             title = { Text(text = "Trending Movies") },
 
@@ -49,23 +48,21 @@ fun MainScreen(
         when (uiState.value) {
 
             is UiState.Loading -> {
-
-
                 LoadingView()
             }
 
             is UiState.Success -> {
-                ((uiState.value as UiState.Success).data as MovieList).let {
-
-
+                ((uiState.value as UiState.Success).data as MovieList).let { movieList->
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(2),
                         contentPadding = PaddingValues(horizontal = 0.dp)
                     ) {
-                        items(it.results) { item ->
+                        items(movieList.results) { movie ->
 
-                            MovieListItem(movie = item) {
-                                onMovieSelected(item.id.toString())
+                            MovieListItem(movie = movie) {
+
+                                onMovieSelected(movie.id.toString())
+
                             }
 
                         }
@@ -75,9 +72,11 @@ fun MainScreen(
 
             is UiState.Fail -> {
                 (uiState.value as UiState.Fail).message?.let {
-                    FailedView(onRetry = {
-                        viewModel.getTrendingMovies()
-                    }, retryable = true, errorText = it)
+                    FailedView(
+                        onRetry = viewModel::getTrendingMovies,
+                        retryable = true,
+                        errorText = it
+                    )
                 }
             }
 
@@ -85,7 +84,6 @@ fun MainScreen(
         }
 
     }
-
 
 
 }

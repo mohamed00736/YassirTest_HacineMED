@@ -17,7 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.hacine.mohamed.hakim.yassir_test_moviedb.presentation.MovieDetailScreen
 import com.hacine.mohamed.hakim.yassir_test_moviedb.presentation.SplashScreen
-import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.presentation.MainScreen
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.presentation.main_screen.MainScreen
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.YassirTestMovieDB_HacineMedTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,8 +43,6 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     NavHost(navController = navcontroller, startDestination = MainDestinations.Splash_Screen){
-
-
                         composable(route = MainDestinations.Main_Screen){
                             BackHandler(enabled = true){
                                 finish()
