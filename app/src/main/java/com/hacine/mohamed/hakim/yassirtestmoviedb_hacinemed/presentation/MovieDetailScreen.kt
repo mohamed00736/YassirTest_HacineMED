@@ -42,12 +42,12 @@ import coil.compose.SubcomposeAsyncImage
 import com.hacine.mohamed.hakim.myapplication.presentation.UiState
 
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.FailedView
-import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.components.LoadingView
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.LoadingView
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.RatingBar
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.R
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.Movie
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.network.Constants
-import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.components.ThreeDotLoading
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.ThreeDotLoading
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -22,7 +22,7 @@ import com.hacine.mohamed.hakim.yassir_test_moviedb.presentation.MainViewModel
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.FailedView
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.MovieListItem
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.MovieList
-import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.components.LoadingView
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.LoadingView
 
 
 @OptIn(ExperimentalMaterial3Api::class)

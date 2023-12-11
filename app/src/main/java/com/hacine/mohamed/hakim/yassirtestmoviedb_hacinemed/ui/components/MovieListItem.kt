@@ -30,7 +30,7 @@ import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.R
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.Movie
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.network.Constants
 
-import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.components.ThreeDotLoading
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.ThreeDotLoading
 
 @Composable
 fun MovieListItem(movie: Movie, onMovieSelected: () -> Unit) {

@@ -1,4 +1,4 @@
-package com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.theme.components
+package com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components
 
 
 import androidx.compose.foundation.Image
