@@ -5,6 +5,7 @@ In the Yassir Movie DB project, I employed Clean Architecture along with MVVM. T
 ## Table of Contents
 
 - [Android Studio 2023.1.1(HedgHog)]
+- Gradle 8.2
 - Kotlin version : 1.9.0
 - Dagger Hilt 2.48
 - Jetpack Compose 1.5.1
