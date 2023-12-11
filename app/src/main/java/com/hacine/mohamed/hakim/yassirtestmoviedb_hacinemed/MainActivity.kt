@@ -2,6 +2,7 @@ package com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -43,7 +44,11 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController = navcontroller, startDestination = MainDestinations.Splash_Screen){
 
+
                         composable(route = MainDestinations.Main_Screen){
+                            BackHandler(enabled = true){
+                                finish()
+                            }
                             MainScreen{ movieId ->
                                 navcontroller.navigate("${MainDestinations.Detail_Screen_List}/"+movieId)
                             }

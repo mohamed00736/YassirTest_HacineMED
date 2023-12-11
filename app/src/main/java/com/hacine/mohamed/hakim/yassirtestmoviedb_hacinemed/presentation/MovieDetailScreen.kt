@@ -167,6 +167,7 @@ private fun DetailHeader(movie: Movie) {
                 ThreeDotLoading()
             },
             error = {
+
                 Image(
                     painter = painterResource(id = R.drawable.baseline_error_outline_24),
                     contentDescription = ""
@@ -202,7 +203,6 @@ private fun DetailHeader(movie: Movie) {
             modifier = Modifier
                 .size(150.dp)
                 .clip(shape = RoundedCornerShape(16.dp))
-
                 .border(
                     BorderStroke(
                         4.dp,
