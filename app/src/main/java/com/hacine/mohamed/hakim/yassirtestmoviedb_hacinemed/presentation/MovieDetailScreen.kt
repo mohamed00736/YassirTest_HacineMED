@@ -172,7 +172,6 @@ private fun DetailHeader(movie: Movie) {
                     painter = painterResource(id = R.drawable.baseline_error_outline_24),
                     contentDescription = ""
                 )
-                Text(text = "Error While Loading Image")
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -198,7 +197,6 @@ private fun DetailHeader(movie: Movie) {
                     painter = painterResource(id = R.drawable.baseline_error_outline_24),
                     contentDescription = ""
                 )
-                Text(text = "Error While Loading Image")
             },
             modifier = Modifier
                 .size(150.dp)
