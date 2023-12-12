@@ -25,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.R
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.Movie
@@ -68,7 +69,6 @@ fun MovieListItem(movie: Movie, onMovieSelected: () -> Unit) {
                         clip = true,
                         ambientColor = Color.Black.copy(1f)
                     )
-
                 )
                 .clip(
                     shape = RoundedCornerShape(8.dp)
@@ -82,8 +82,9 @@ fun MovieListItem(movie: Movie, onMovieSelected: () -> Unit) {
         BasicText(
             text = movie.title ?: "",
             style = TextStyle(
+                fontSize = 18.sp,
                 color = MaterialTheme.colorScheme.secondary,
-                fontStyle = MaterialTheme.typography.labelMedium.fontStyle
+                fontStyle = MaterialTheme.typography.labelLarge.fontStyle
             ),
             overflow = TextOverflow.Visible,
             modifier = Modifier.wrapContentWidth()
