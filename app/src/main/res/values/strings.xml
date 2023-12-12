@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">YassirTestMovieDB_HacineMed</string>
+    <string name="app_name">Yassir Movie DB</string>
+    <string name="trending">Trending Movies</string>
+    <string name="detail">Detail</string>
 </resources>

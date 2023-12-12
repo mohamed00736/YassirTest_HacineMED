@@ -16,10 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.hacine.mohamed.hakim.myapplication.presentation.UiState
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.FailedView
 import com.hacine.mohamed.hakim.yassir_test_moviedb.ui.components.MovieListItem
+import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.R
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.data.models.MovieList
 import com.hacine.mohamed.hakim.yassirtestmoviedb_hacinemed.ui.components.LoadingView
 
@@ -40,7 +42,7 @@ fun MainScreen(
             .background(MaterialTheme.colorScheme.background)
     ) {
         TopAppBar(
-            title = { Text(text = "Trending Movies") },
+            title = { Text(text = stringResource(id = R.string.trending)) },
 
             modifier = Modifier.shadow(elevation = 16.dp)
         )

@@ -93,10 +93,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.0.0")
 
 
-    //accompanist
-    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.22.0-rc")
-    implementation ("com.google.accompanist:accompanist-insets:0.17.0")
-
     // Lottie
     implementation ("com.airbnb.android:lottie-compose:5.0.3")
     implementation ("com.airbnb.android:lottie:5.0.3")

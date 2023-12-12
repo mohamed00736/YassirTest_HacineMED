@@ -35,6 +35,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -67,7 +68,7 @@ fun MovieDetailScreen(movieid: String, viewModel: DetailViewModel = hiltViewMode
             .background(MaterialTheme.colorScheme.background)
     ) {
         TopAppBar(
-            title = { Text(text = "Details") },
+            title = { Text(text = stringResource(id = R.string.detail)) },
             navigationIcon = {
                 IconButton(onClick = {
                     onBack()
